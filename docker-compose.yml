@@ -3,6 +3,8 @@ version: '3.8'
 services:
   image-sync:
     build: .
+    # 如不愿意构建也可以直接使用我的镜像，把上面build注释，下面的image取消注释即可
+    # image: registry.cn-hangzhou.aliyuncs.com/syncimage2aliyun/syncimage2aliyun:0.1
     container_name: image-sync-service
     ports:
       - "${PORT:-3000}:${PORT:-3000}"
@@ -15,3 +17,4 @@ services:
       timeout: 3s
       retries: 3
       start_period: 5s
+
